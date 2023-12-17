@@ -1,6 +1,6 @@
 # RainStone
 
-## A dead-simple weather module for [Polybar](https://github.com/polybar/polybar) written in pure Ruby, built on the [National Weather Service API](https://www.weather.gov/documentation/services-web-api)
+#### A dead-simple weather module for [Polybar](https://github.com/polybar/polybar) written in pure Ruby, built on the [National Weather Service API](https://www.weather.gov/documentation/services-web-api)
 
 ## Usage
 
