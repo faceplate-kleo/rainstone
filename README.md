@@ -33,25 +33,25 @@ cd rainstone
 ```
 ./install.rb
 ```
-RainStone is installed to `/etc/polybar` by default. If your polybar configuration lives elsewhere, override this default path with
+    RainStone is installed to `/etc/polybar` by default. If your polybar configuration lives elsewhere, override this default path with
 ```
 ./install.rb --config /path/to/your/polybar
 ```
 
-The install script is also written in Ruby to ensure you have it installed :)
+    The install script is also written in Ruby to ensure you have it installed :)
 
 3. Add RainStone to your polybar `config.ini`
 
-With the text editor of your choice, update your `config.ini` with the configuration block provided by the install script.
+    With the text editor of your choice, update your `config.ini` with the configuration block provided by the install script.
 
-An example configuration: 
+    An example configuration: 
 
 ![](/resources/module_add.png)
 ![](/resources/module_definition.png)
 
 4. Restart polybar (if required)
 
-If you have not configured Polybar to reload on configuration changes, you'll need to restart it for RainStone to appear.
+    If you have not configured Polybar to reload on configuration changes, you'll need to restart it for RainStone to appear.
 
 
 All done! Enjoy the weather.
