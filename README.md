@@ -24,19 +24,21 @@ In action:
 
 1. Clone this repository
 
-```
-git clone https://github.com/faceplate-kleo/rainstone
-cd rainstone
-```
+    ```
+    git clone https://github.com/faceplate-kleo/rainstone
+    cd rainstone
+    ```
 
 2. Run the RainStone install script
-```
-./install.rb
-```
+    ```
+    ./install.rb
+    ```
+
     RainStone is installed to `/etc/polybar` by default. If your polybar configuration lives elsewhere, override this default path with
-```
-./install.rb --config /path/to/your/polybar
-```
+
+    ```
+    ./install.rb --config /path/to/your/polybar
+    ```
 
     The install script is also written in Ruby to ensure you have it installed :)
 
@@ -46,8 +48,8 @@ cd rainstone
 
     An example configuration: 
 
-![](/resources/module_add.png)
-![](/resources/module_definition.png)
+    ![](/resources/module_add.png)
+    ![](/resources/module_definition.png)
 
 4. Restart polybar (if required)
 
