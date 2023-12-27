@@ -6,6 +6,10 @@ require 'json'
 class RainStone
   def initialize()
     @geo_hash = load_geohash()
+    if @geo_hash == {}
+      puts "(RainStone) FATAL: Could not read geo file"
+      exit 1
+    end
     @lat_long = @geo_hash["loc"]
     @setup_uri = URI('https://api.weather.gov/points/' + @lat_long)
     @headers = {
@@ -21,7 +25,14 @@ class RainStone
       system("curl ipinfo.io > .geo.json")
     end
     geofile = File.read('.geo.json')
-    return JSON.parse(geofile)
+    out = {}
+    
+    begin
+      out = JSON.parse(geofile)
+    rescue
+      puts "JSON parse error #{geofile}"
+    end
+    return out
   end
 
   def setup()
@@ -35,7 +46,18 @@ class RainStone
 
   def query_hourly_forecast()
     respHourly = Net::HTTP.get_response(@hourly_uri, @headers)
-    return JSON.load(respHourly.body)["properties"]["periods"]
+    out = {}
+    begin
+      out = JSON.load(respHourly.body)["properties"]["periods"]
+    rescue 
+      out = [{ "temperature" => "UNKNOWN", 
+              "shortForecast" => "UNKNOWN", 
+              "probabilityOfPrecipitation" => {
+                "value" => "UNKNOWN"
+              }
+            }]
+    end
+    return out
   end
 
   def outside_now()
